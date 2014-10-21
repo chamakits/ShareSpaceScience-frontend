@@ -1,0 +1,6 @@
+---
+applications:
+- name:      cf-tri-meetup
+  host:      cf-tri-meetup
+  memory:    64M
+  buildpack: https://github.com/cloudfoundry-community/staticfile-buildpack.git
