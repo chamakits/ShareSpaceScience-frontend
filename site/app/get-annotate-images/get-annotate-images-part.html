@@ -1,42 +1,40 @@
-<header id="myCarousel" class="carousel slide">
-  <div class="carousel-inner">
-    <form>
-      <div class="form-group">
-        <div class="">
-          <div class="row">
-            <div class="col-xs-3 col-md-3">
-            </div>
-            <div class="col-xs-9 col-md-6">
-              <h3>Nasa throughout the years</h3>
-              <h5>Customize with your own messages before sending it to a friend.</h5>
-              <table class="table ">
-                <tbody>
-                  <tr ng-repeat="imageWithText in imagesWithTextToBeFilled">
-                    <td>
-                      <img class="image-to-annotate" src="{{imageWithText.url}}"></img>
-                    </td>
-                    <td>
-                      <div class="row">
-                        <h4>{{imageWithText.title}}</h4>
-                        <h6>From {{imageWithText.date}}</h6>
-                      </div>
-                      <!-- <hr/> -->
-                      <div class="row">
-                        <p>{{imageWithText.explanation}}</p>
-                      </div>
-                      <!-- <hr/> -->
-                      <div class="row">
-                        <h4>Add a custom message for your friend!</h4>
-                        <input type="text" class="form-control" ng-model="imageWithText.customMessage" />
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+<div class="partial-wrap">
+  <form>
+    <div class="form-group">
+      <div class="">
+        <div class="row">
+          <div class="col-xs-3 col-md-3">
+          </div>
+          <div class="col-xs-9 col-md-6">
+            <h3>Nasa throughout the years</h3>
+            <h5>Customize with your own messages before sending it to a friend.</h5>
+            <table class="table ">
+              <tbody>
+                <tr ng-repeat="imageWithText in imagesWithTextToBeFilled">
+                  <td>
+                    <img class="image-to-annotate" src="{{imageWithText.url}}"></img>
+                  </td>
+                  <td>
+                    <div class="row">
+                      <h4>{{imageWithText.title}}</h4>
+                      <h6>From {{imageWithText.date}}</h6>
+                    </div>
+                    <!-- <hr/> -->
+                    <div class="row">
+                      <p>{{imageWithText.explanation}}</p>
+                    </div>
+                    <!-- <hr/> -->
+                    <div class="row">
+                      <h4>Add a custom message for your friend!</h4>
+                      <input type="text" class="form-control" ng-model="imageWithText.customMessage" />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-    </form>
-  </div>
-</header>
+    </div>
+  </form>
+</div>

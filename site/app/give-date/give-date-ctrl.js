@@ -8,25 +8,23 @@
 
       $scope.format = 'yyyy-MM-dd';
 
-      $scope.today = function() {
-        // $scope.selectedDate = new Date();
-        // From http://stackoverflow.com/a/3552493/537028
-        var monthNames = [
-          "January", "February", "March",
-          "April", "May", "June", "July",
-          "August", "September", "October",
-          "November", "December"
-        ];
-
-        var date = new Date();
+      function cleanDate( date ) {
+        date = new Date(date);
         var day = date.getDate();
-        var monthIndex = date.getMonth();
-        var monthName = monthNames[monthIndex];
+        if (day < 10 ) {
+          day = "0" + day;
+        }
+        var monthIndex = date.getMonth()+1;
+        if (monthIndex < 10) {
+          monthIndex = "0" + monthIndex;
+        }
         var year = date.getFullYear();
+        return year + "-" + monthIndex + "-" + day;
+      }
 
-        console.log(day, monthNames[monthIndex], year);
-
-        $scope.selectedDate = year + "-" + monthIndex + "-" + day;
+      $scope.today = function() {
+        var date = new Date();
+        $scope.selectedDate = cleanDate(date);
       };
       $scope.today();
       // $scope.selectedDate = $scope.today();
@@ -50,7 +48,7 @@
 
       $scope.submitDate = function() {
         console.log("Submitting date");
-        $location.url("/get-annotate-images?date="+$scope.selectedDate);
+        $location.url("/get-annotate-images?date="+cleanDate($scope.selectedDate));
       };
       // Restangular.one("").get.then(fu
     }

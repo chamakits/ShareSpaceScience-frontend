@@ -9,3 +9,7 @@ table {
   width: 50%;
   /*border-style: none;*/
 }
+
+.partial-wrap {
+  padding-top: 50px;
+}
