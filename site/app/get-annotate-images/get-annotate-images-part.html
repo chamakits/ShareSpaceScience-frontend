@@ -19,11 +19,11 @@
                       <h4>{{imageWithText.title}}</h4>
                       <h6>From {{imageWithText.date}}</h6>
                     </div>
-                    <!-- <hr/> -->
+                    <hr/>
                     <div class="row">
                       <p>{{imageWithText.explanation}}</p>
                     </div>
-                    <!-- <hr/> -->
+                    <hr/>
                     <div class="row">
                       <h4>Add a custom message for your friend!</h4>
                       <input type="text" class="form-control" ng-model="imageWithText.customMessage" />
@@ -32,9 +32,15 @@
                 </tr>
               </tbody>
             </table>
+
+
+            <button type="button" class="btn btn-default btn-lg" ng-click="createLink()">
+              <span class="glyphicon glyphicon-play" aria-hidden="true"></span> Create Link
+            </button>
           </div>
         </div>
       </div>
     </div>
   </form>
+
 </div>
