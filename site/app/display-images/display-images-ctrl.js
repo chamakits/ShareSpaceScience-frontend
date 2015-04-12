@@ -29,10 +29,10 @@
         $scope.currentImage = $scope.images[$scope.currentIndex];
       };
       $scope.nextPicture = function() {
-        if ($scope.currentIndex >= images.length - 1) {
+        if ($scope.currentIndex >= $scope.images.length - 1) {
           $scope.currentIndex = 0;
         } else {
-          $scope.currentIndex = $scope.currentIndex - 1;
+          $scope.currentIndex = $scope.currentIndex + 1;
         }
         $scope.currentImage = $scope.images[$scope.currentIndex];
       };
