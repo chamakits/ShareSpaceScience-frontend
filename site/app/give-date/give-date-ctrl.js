@@ -1,9 +1,12 @@
 (function() {
   var sharedSpaceScienceControllers = angular.module("sharedSpaceScience.controllers");
-  sharedSpaceScienceControllers.controller("GiveDateCtrl", ["$scope", "$q",
-    function($scope, $q) {
+  sharedSpaceScienceControllers.controller("GiveDateCtrl", ["$scope",
+    "$q",
+    "Restangular",
+    "$location",
+    function($scope, $q, Restangular, $location) {
 
-      $scope.format = 'dd-MMMM-yyyy';
+      $scope.format = 'yyyy-MM-dd';
 
       $scope.today = function() {
         // $scope.selectedDate = new Date();
@@ -22,9 +25,8 @@
         var year = date.getFullYear();
 
         console.log(day, monthNames[monthIndex], year);
-        $scope.selectedDate = date.year + ""
 
-        $scope.selectedDate = day + "-" + monthName + "-" + year;
+        $scope.selectedDate = year + "-" + monthIndex + "-" + day;
       };
       $scope.today();
       // $scope.selectedDate = $scope.today();
@@ -46,7 +48,11 @@
         startingDay: 1
       };
 
-
+      $scope.submitDate = function() {
+        console.log("Submitting date");
+        $location.url("/get-annotate-images?date="+$scope.selectedDate);
+      };
+      // Restangular.one("").get.then(fu
     }
   ]);
 }(this));
