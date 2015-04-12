@@ -4,16 +4,32 @@
   sharedSpaceScienceControllers.controller("DisplayImagesCtrl", ["$scope",
     "$q",
     'Restangular',
+    '$routeParams',
     function($scope,
       $q,
-      Restangular) {
+      Restangular,
+      $routeParams) {
 
-      Restangular.one('images-detailed-with-custom-message.json')
-        .get().then(function(result) {
+      // Restangular.one('images-detailed-with-custom-message.json')
+      //   .get().then(function(result) {
+      //     $scope.images = result.posts;
+      //     $scope.currentIndex = 0;
+      //     $scope.currentImage = $scope.images[$scope.currentIndex];
+      //   })
+      $scope.date = $routeParams.date;
+      Restangular.one("apod/pictures").get({
+          date: $scope.date
+        })
+        .then(function(result) {
+          $scope.imagesWithTextToBeFilled = result.posts;
           $scope.images = result.posts;
+          _.forEach($scope.images, function(currentImage) {
+            currentImage.customMessage = currentImage.explanation;
+            console.log(currentImage.customMessage);
+          });
           $scope.currentIndex = 0;
           $scope.currentImage = $scope.images[$scope.currentIndex];
-        })
+        });
 
       console.log("DisplayImagesCtrl!");
       // $scope.currentImage = {

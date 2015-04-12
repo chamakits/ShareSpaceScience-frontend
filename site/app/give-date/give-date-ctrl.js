@@ -48,7 +48,8 @@
 
       $scope.submitDate = function() {
         console.log("Submitting date");
-        $location.url("/get-annotate-images?date="+cleanDate($scope.selectedDate));
+        // $location.url("/get-annotate-images?date="+cleanDate($scope.selectedDate));
+        $location.url("/display-images?date="+cleanDate($scope.selectedDate));
       };
       // Restangular.one("").get.then(fu
     }

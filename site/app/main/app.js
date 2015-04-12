@@ -50,7 +50,8 @@
       });
 
       //CHANGE HERE
-      RestangularProvider.setBaseUrl("/mocks/");
+      // RestangularProvider.setBaseUrl("/mocks/");
+      RestangularProvider.setBaseUrl("http://104.236.3.173:8080/")
 
     }
   ]);
