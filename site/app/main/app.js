@@ -1,6 +1,6 @@
 (function(that) {
   var sharedSpaceScienceApp = angular.module("sharedSpaceScienceApp", ["sharedSpaceScience.controllers",
-    "angular-carousel",
+    // "angular-carousel",
     "ngResource",
     "ngRoute",
     "restangular"
