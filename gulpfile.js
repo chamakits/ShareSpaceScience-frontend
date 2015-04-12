@@ -9,13 +9,13 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('html', function () {
-  gulp.src('./site/**/**/*')
+gulp.task('allFiles', function () {
+  gulp.src('./site/**/*')
     .pipe(connect.reload());
 });
 
 gulp.task('watch', function () {
-  gulp.watch(['./site/**/**/*'], ['html']);
+  gulp.watch(['./site/**/**/*'], ['allFiles']);
 });
 
 gulp.task('default', ['connect', 'watch']);

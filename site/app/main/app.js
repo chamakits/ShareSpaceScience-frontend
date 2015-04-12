@@ -12,7 +12,7 @@
   };
   that.MenuLinks = MenuLinks;
 
-  var sharedSpaceScienceControllers = angular.module("sharedSpaceScience.controllers", []);
+  var sharedSpaceScienceControllers = angular.module("sharedSpaceScience.controllers", ['ui.bootstrap']);
 
   var links = [
     new MenuLinks("/app/give-date/give-date-part.html",

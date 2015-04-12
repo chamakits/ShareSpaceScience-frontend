@@ -1,5 +1,4 @@
 (function() {
-  var URL = "http://localhost:9090/api/add-task";
   var sharedSpaceScienceControllers = angular.module("sharedSpaceScience.controllers");
 
   sharedSpaceScienceControllers.controller("DisplayImagesCtrl", ["$scope", "$q",
