@@ -1,6 +1,6 @@
 ---
 applications:
-- name:      cf-tri-meetup
-  host:      cf-tri-meetup
+- name:      share-space-science
+  host:      share-space-science
   memory:    64M
   buildpack: https://github.com/cloudfoundry-community/staticfile-buildpack.git
