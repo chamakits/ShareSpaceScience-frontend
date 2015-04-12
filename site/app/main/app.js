@@ -18,7 +18,9 @@
 
   var links = [
     new MenuLinks("/app/give-date/give-date-part.html",
-      "GiveDateCtrl", "/give-date", "Giving date"),
+      "GiveDateCtrl", "/", "Giving date"),
+        new MenuLinks("/app/give-date/give-date-part.html",
+          "GiveDateCtrl", "/give-date", "Giving date"),
     new MenuLinks("/app/get-annotate-images/get-annotate-images-part.html",
       "GetAnnotateImagesCtrl", "/get-annotate-images", "Getting images and annotating"),
     new MenuLinks("/app/display-images/display-images-part.html",
@@ -46,7 +48,7 @@
         });
       });
       routeProvider.otherwise({
-        redirectTo: "/"
+        redirectTo: "/give-date"
       });
 
       //CHANGE HERE
