@@ -1,7 +1,9 @@
 (function(that) {
   var sharedSpaceScienceApp = angular.module("sharedSpaceScienceApp", ["sharedSpaceScience.controllers",
     "angular-carousel",
-    "ngResource", "ngRoute"
+    "ngResource",
+    "ngRoute",
+    "restangular"
   ]);
 
   function MenuLinks(template, controller, link, text) {
@@ -25,26 +27,33 @@
 
   console.log(links);
 
-  sharedSpaceScienceControllers.controller("MenuController", ["$scope", function($scope) {
-    $scope.headers = links;
-  }]);
+  sharedSpaceScienceControllers.controller("MenuController", ["$scope",
+    function($scope) {
+      $scope.headers = links;
+    }
+  ]);
 
-  sharedSpaceScienceApp.config(["$routeProvider", function($routeProvider) {
-    console.log("Providing route");
-    console.log(links);
-    var routeProvider = $routeProvider;
-    _.forEach(links, function(link) {
-      console.log("Setting links.");
-      routeProvider = routeProvider.when(link.link, {
-        templateUrl: link.template,
-        controller: link.controller
+  sharedSpaceScienceApp.config(["$routeProvider", 'RestangularProvider',
+    function($routeProvider, RestangularProvider) {
+      console.log("Providing route");
+      console.log(links);
+      var routeProvider = $routeProvider;
+      _.forEach(links, function(link) {
+        console.log("Setting links.");
+        routeProvider = routeProvider.when(link.link, {
+          templateUrl: link.template,
+          controller: link.controller
+        });
       });
-    });
-    routeProvider.otherwise({
-      redirectTo: "/"
-    });
+      routeProvider.otherwise({
+        redirectTo: "/"
+      });
 
-  }]);
+      //CHANGE HERE
+      RestangularProvider.setBaseUrl("/mocks/");
+
+    }
+  ]);
 
   // sharedSpaceScienceControllers.controller("")
 
