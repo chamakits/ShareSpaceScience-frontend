@@ -11,7 +11,7 @@
       //   $scope.imagesWithText = imagesWithText.posts;
       // });
       Restangular.one("apod/pictures").get({date:$scope.date}).then(function(imagesWithText) {
-        $scope.imagesWithText = imagesWithText.posts;
+        $scope.imagesWithTextToBeFilled = imagesWithText.posts;
       });
     }
   ]);
